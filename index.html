@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>gtfs_segments API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>gtfs_segments</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">__version__ = &#39;0.0.4&#39;
+from .gtfs_segments import (
+    get_gtfs_segments,
+    pipeline_gtfs,
+    process_feed
+)
+from .utils import (
+    export_segments,
+    plot_hist,
+    process,
+    summary_stats
+)
+
+from .mobility import(
+    fetch_gtfs_source,
+    summary_stats_mobility,
+    download_latest_data
+)
+
+__all__ = [
+    &#34;__version__&#34;,
+    &#34;get_gtfs_segments&#34;,
+    &#34;pipeline_gtfs&#34;,
+    &#34;process_feed&#34;,
+    &#34;export_segments&#34;,
+    &#34;plot_hist&#34;,
+    &#34;fetch_gtfs_source&#34;,
+    &#34;summary_stats&#34;,
+    &#34;process&#34;,
+    &#34;process&#34;,
+    &#34;summary_stats_mobility&#34;,
+    &#34;download_latest_data&#34;
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="gtfs_segments.geom_utils" href="geom_utils.html">gtfs_segments.geom_utils</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="gtfs_segments.gtfs_segments" href="gtfs_segments.html">gtfs_segments.gtfs_segments</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="gtfs_segments.mobility" href="mobility.html">gtfs_segments.mobility</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="gtfs_segments.partridge_func" href="partridge_func.html">gtfs_segments.partridge_func</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="gtfs_segments.utils" href="utils.html">gtfs_segments.utils</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="gtfs_segments.download_latest_data"><code class="name flex">
+<span>def <span class="ident">download_latest_data</span></span>(<span>out_folder_path, sources_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It iterates over the rows of the dataframe, and for each row, it tries to download the file from the
+URL in the <code>urls.latest</code> column, and write it to the folder specified in the <code>provider</code> column</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>out_folder_path</code></strong></dt>
+<dd>The path to the folder where you want to save the data</dd>
+<dt><strong><code>sources_df</code></strong></dt>
+<dd>This is the dataframe that contains the urls for the data.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def download_latest_data(out_folder_path,sources_df):
+    &#34;&#34;&#34;
+    It iterates over the rows of the dataframe, and for each row, it tries to download the file from the
+    URL in the `urls.latest` column, and write it to the folder specified in the `provider` column
+    
+    Args:
+      out_folder_path: The path to the folder where you want to save the data
+      sources_df: This is the dataframe that contains the urls for the data.
+    &#34;&#34;&#34;
+    for i,row in sources_df.iterrows():
+        try:
+            download_write_file(row[&#39;urls.latest&#39;],os.path.join(out_folder_path,row[&#39;provider&#39;]))
+        except:
+            continue
+    print(&#34;Downloaded the latest data&#34;)    </code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.export_segments"><code class="name flex">
+<span>def <span class="ident">export_segments</span></span>(<span>df, file_path, output_format, geometry=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function takes a GeoDataFrame of segments, a file path, an output format, and a boolean value
+for whether or not to include the geometry in the output. </p>
+<p>If the output format is GeoJSON, the function will output the GeoDataFrame to a GeoJSON file. </p>
+<p>If the output format is CSV, the function will output the GeoDataFrame to a CSV file. If the
+geometry boolean is set to True, the function will output the CSV file with the geometry column. If
+the geometry boolean is set to False, the function will output the CSV file without the geometry
+column. </p>
+<p>The function will also add additional columns to the CSV file, including the start and end points of
+the segments, the start and end longitude and latitude of the segments, and the distance of the
+segments. </p>
+<p>The function will also add a column to the CSV file that indicates the number of times the segment
+was traversed.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong></dt>
+<dd>the dataframe containing the segments</dd>
+<dt><strong><code>file_path</code></strong></dt>
+<dd>The path to the file you want to export to.</dd>
+<dt><strong><code>output_format</code></strong></dt>
+<dd>geojson or csv</dd>
+<dt><strong><code>geometry</code></strong></dt>
+<dd>If True, the output will include the geometry of the segments. If False, the output will</dd>
+</dl>
+<p>only include the start and end points of the segments. Defaults to True</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def export_segments(df,file_path,output_format, geometry = True):
+    &#34;&#34;&#34;
+    This function takes a GeoDataFrame of segments, a file path, an output format, and a boolean value
+    for whether or not to include the geometry in the output. 
+    
+    If the output format is GeoJSON, the function will output the GeoDataFrame to a GeoJSON file. 
+    
+    If the output format is CSV, the function will output the GeoDataFrame to a CSV file. If the
+    geometry boolean is set to True, the function will output the CSV file with the geometry column. If
+    the geometry boolean is set to False, the function will output the CSV file without the geometry
+    column. 
+    
+    The function will also add additional columns to the CSV file, including the start and end points of
+    the segments, the start and end longitude and latitude of the segments, and the distance of the
+    segments. 
+    
+    The function will also add a column to the CSV file that indicates the number of times the segment
+    was traversed.
+    
+    Args:
+      df: the dataframe containing the segments
+      file_path: The path to the file you want to export to.
+      output_format: geojson or csv
+      geometry: If True, the output will include the geometry of the segments. If False, the output will
+    only include the start and end points of the segments. Defaults to True
+    &#34;&#34;&#34;
+    ## Output to GeoJSON
+    if output_format == &#39;geojson&#39;:
+        df.to_file(file_path+&#39;.json&#39;, driver=&#34;GeoJSON&#34;)
+    elif output_format == &#39;csv&#39;:
+        s_df = df[[&#39;route_id&#39;,&#39;segment_id&#39;,&#39;stop_id1&#39;,&#39;stop_id2&#39;,&#39;distance&#39;,&#39;traversals&#39;,&#39;geometry&#39;]].copy()
+        geom_list =  s_df.geometry.apply(lambda g: np.array(g.coords))
+        s_df[&#39;start_point&#39;] = [Point(g[0]).wkt for g in geom_list]
+        s_df[&#39;end_point&#39;] = [Point(g[-1]).wkt for g in geom_list]
+        s_df[&#39;start_lon&#39;] = [g[0][0] for g in geom_list]
+        s_df[&#39;start_lat&#39;] = [g[0][1] for g in geom_list]
+        s_df[&#39;end_lon&#39;] = [g[-1][0] for g in geom_list]
+        s_df[&#39;end_lat&#39;] = [g[-1][1] for g in geom_list]
+        sg_df = s_df[[&#39;route_id&#39;,&#39;segment_id&#39;,&#39;stop_id1&#39;,&#39;stop_id2&#39;,&#39;distance&#39;,&#39;traversals&#39;,&#39;start_point&#39;,&#39;end_point&#39;,&#39;geometry&#39;]]
+        if geometry == True:
+            ## Output With LS
+            sg_df.to_csv(file_path+&#39;.csv&#39;,index = False)
+        else:
+            d_df = s_df[[&#39;route_id&#39;,&#39;segment_id&#39;,&#39;stop_id1&#39;,&#39;stop_id2&#39;,&#39;start_lat&#39;,&#39;start_lon&#39;,&#39;end_lat&#39;,&#39;end_lon&#39;,&#39;distance&#39;,&#39;traversals&#39;]]
+            ## Output without LS
+            d_df.to_csv(file_path+&#39;.csv&#39;,index = False)</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.fetch_gtfs_source"><code class="name flex">
+<span>def <span class="ident">fetch_gtfs_source</span></span>(<span>place='ALL')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It reads the mobility data sources csv file and generates a dataframe with the sources that are of
+type gtfs and are from the US</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>place</code></strong></dt>
+<dd>The place you want to get the GTFS data for. This can be a city, state, or country.</dd>
+</dl>
+<p>Defaults to ALL</p>
+<h2 id="returns">Returns</h2>
+<p>A dataframe with sources</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fetch_gtfs_source(place =&#39;ALL&#39;):
+    &#34;&#34;&#34;
+    It reads the mobility data sources csv file and generates a dataframe with the sources that are of
+    type gtfs and are from the US
+    
+    Args:
+      place: The place you want to get the GTFS data for. This can be a city, state, or country.
+    Defaults to ALL
+    
+    Returns:
+      A dataframe with sources
+    &#34;&#34;&#34;
+    abb_df = pd.read_json(ABBREV_link)
+    sources_df = pd.read_csv(MOBILITY_SOURCES_link)
+    sources_df = sources_df[sources_df[&#39;location.country_code&#39;] == &#39;US&#39;]
+    sources_df = sources_df[sources_df[&#39;data_type&#39;] == &#39;gtfs&#39;]
+    sources_df = pd.merge(sources_df,abb_df,how=&#39;left&#39;,left_on=&#39;location.subdivision_name&#39;,right_on=&#39;state&#39;)
+    sources_df = sources_df[~sources_df.state_code.isna()]
+    sources_df[&#39;location.municipality&#39;] = sources_df[&#39;location.municipality&#39;].astype(&#34;str&#34;)
+    sources_df.drop([&#39;entity_type&#39;,&#39;mdb_source_id&#39;,&#39;data_type&#39;,&#39;location.country_code&#39;,&#39;note&#39;,
+                     &#39;static_reference&#39;,&#39;urls.direct_download&#39;,&#39;urls.authentication_type&#39;,&#39;urls.license&#39;,&#39;location.bounding_box.extracted_on&#39;, &#39;urls.authentication_info&#39;,&#39;urls.api_key_parameter_name&#39;,&#39;features&#39;],axis=1,inplace=True)
+    file_names = []
+    for i,row in sources_df.iterrows():
+        if row[&#39;location.municipality&#39;] != &#39;nan&#39;:
+            if len(sources_df[(sources_df[&#39;location.municipality&#39;] == row[&#39;location.municipality&#39;]) &amp; (sources_df[&#39;provider&#39;] == row[&#39;provider&#39;])]) &lt;= 1:
+                f_name = str(row[&#39;location.municipality&#39;])+&#39;-&#39;+str(row[&#39;provider&#39;])+&#39;-&#39;+str(row[&#39;state_code&#39;])
+            else:
+                f_name = str(row[&#39;location.municipality&#39;])+&#39;-&#39;+str(row[&#39;provider&#39;])+&#39;-&#39;+str(row[&#39;name&#39;])+&#39;-&#39;+str(row[&#39;state_code&#39;])
+        else:
+            if len(sources_df[(sources_df[&#39;location.subdivision_name&#39;] == row[&#39;location.subdivision_name&#39;]) &amp; (sources_df[&#39;provider&#39;] == row[&#39;provider&#39;])]) &lt;= 1:
+                f_name = str(row[&#39;location.subdivision_name&#39;])+&#39;-&#39;+str(row[&#39;provider&#39;])+&#39;-&#39;+str(row[&#39;state_code&#39;])
+            else:
+                f_name =str(row[&#39;location.subdivision_name&#39;])+&#39;-&#39;+str(row[&#39;provider&#39;])+&#39;-&#39;+str(row[&#39;name&#39;])+&#39;-&#39;+str(row[&#39;state_code&#39;])
+        f_name = f_name.replace(&#39;/&#39;,&#39;&#39;).strip()
+        file_names.append(f_name)
+    sources_df.drop([&#39;provider&#39;,&#39;location.municipality&#39;,&#39;location.subdivision_name&#39;,&#39;name&#39;,&#39;state_code&#39;,&#39;state&#39;],axis=1,inplace=True)
+    sources_df.insert(0,&#39;provider&#39;,file_names)
+    sources_df.columns = sources_df.columns.str.replace(&#39;location.bounding_box.&#39;,&#34;&#34;,regex=True)
+    if place == &#39;ALL&#39;:
+        return sources_df
+    else:
+        sources_df = sources_df[sources_df.apply(lambda row: row.astype(str).str.contains(place.lower(), case=False).any(), axis=1)]
+        if len(sources_df) == 0:
+            return &#34;No sources found for the given place&#34;
+        else:
+            return sources_df</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.get_gtfs_segments"><code class="name flex">
+<span>def <span class="ident">get_gtfs_segments</span></span>(<span>path)</span>
+</code></dt>
+<dd>
+<div class="desc"><blockquote>
+<p>It reads a GTFS file, and returns a list of segments</p>
+</blockquote>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong></dt>
+<dd>the path to the GTFS file</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A list of segments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gtfs_segments(path):
+    &#34;&#34;&#34;
+    &gt; It reads a GTFS file, and returns a list of segments
+    
+    Args:
+      path: the path to the GTFS file
+    
+    Returns:
+      A list of segments.
+    &#34;&#34;&#34;
+    bday ,feed = ptg_read_file(path)
+    return process_feed(feed)</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.pipeline_gtfs"><code class="name flex">
+<span>def <span class="ident">pipeline_gtfs</span></span>(<span>filename, url, bounds, max_spacing)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes a GTFS file, downloads it, reads it, processes it, and then outputs a bunch of files. </p>
+<p>Let's go through the function step by step. </p>
+<p>First, we define the function and give it a name. We also give it a few arguments: </p>
+<ul>
+<li>filename: the name of the file we want to save the output to. </li>
+<li>url: the url of the GTFS file we want to download. </li>
+<li>bounds: the bounding box of the area we want to analyze. </li>
+<li>max_spacing: the maximum spacing we want to analyze. </li>
+</ul>
+<p>We then create a folder to save the output to. </p>
+<p>Next, we download the GTFS file and save it to the folder we just created. </p>
+<p>Then, we read the GTFS file using the <code>ptg_read_file</code> function. </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>filename</code></strong></dt>
+<dd>the name of the file you want to save the output to</dd>
+<dt><strong><code>url</code></strong></dt>
+<dd>the url of the GTFS file</dd>
+<dt><strong><code>bounds</code></strong></dt>
+<dd>the bounding box of the area you want to analyze. This is in the format</dd>
+</dl>
+<p>[min_lat,min_lon,max_lat,max_lon]
+max_spacing: The maximum distance between stops that you want to consider.</p>
+<h2 id="returns">Returns</h2>
+<p>a string with the name of the file that was processed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pipeline_gtfs(filename,url,bounds,max_spacing):
+    &#34;&#34;&#34;
+    It takes a GTFS file, downloads it, reads it, processes it, and then outputs a bunch of files. 
+    
+    Let&#39;s go through the function step by step. 
+    
+    First, we define the function and give it a name. We also give it a few arguments: 
+    
+    - filename: the name of the file we want to save the output to. 
+    - url: the url of the GTFS file we want to download. 
+    - bounds: the bounding box of the area we want to analyze. 
+    - max_spacing: the maximum spacing we want to analyze. 
+    
+    We then create a folder to save the output to. 
+    
+    Next, we download the GTFS file and save it to the folder we just created. 
+    
+    Then, we read the GTFS file using the `ptg_read_file` function. 
+    
+    Args:
+      filename: the name of the file you want to save the output to
+      url: the url of the GTFS file
+      bounds: the bounding box of the area you want to analyze. This is in the format
+    [min_lat,min_lon,max_lat,max_lon]
+      max_spacing: The maximum distance between stops that you want to consider.
+    
+    Returns:
+      a string with the name of the file that was processed.
+    &#34;&#34;&#34;
+    folder_path  = os.path.join(&#39;output_files&#39;,filename)
+    gtfs_file_loc = download_write_file(url,folder_path)
+    
+    ## read file using GTFS Fucntions
+    busisest_day, feed = ptg_read_file(gtfs_file_loc)
+    ## Remove Null entries
+    message =  inspect_feed(feed)
+    if message != True:
+        return failed_pipeline(message,filename,folder_path)
+    
+    df = process_feed(feed)
+    df_sub = df[df[&#39;distance&#39;]  &lt; 3000].copy().reset_index(drop=True)
+    if len(df_sub) == 0:
+        return failed_pipeline(&#39;Only Long Bus Routes in &#39;,filename,folder_path)
+    ## Output files and Stats
+    summary_stats_mobility(df,folder_path,filename,busisest_day,url,bounds,max_spacing,export=True)
+
+    plot_hist(df,file_path = os.path.join(folder_path,&#39;spacings.png&#39;),title = filename.split(&#34;.&#34;)[0],max_spacing = max_spacing,save_fig=True)
+    export_segments(df,os.path.join(folder_path,&#39;geojson&#39;), output_format =&#39;geojson&#39;,geometry = True)
+    export_segments(df,os.path.join(folder_path,&#39;spacings_with_geometry&#39;), output_format =&#39;csv&#39;,geometry = True)
+    export_segments(df,os.path.join(folder_path,&#39;spacings&#39;), output_format =&#39;csv&#39;,geometry = False)
+    return &#34;Success for &#34;+filename</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.plot_hist"><code class="name flex">
+<span>def <span class="ident">plot_hist</span></span>(<span>df, save_fig=False, show_mean=False, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes a dataframe with two columns, one with the distance between stops and the other with the
+number of traversals between those stops, and plots a weighted histogram of the distances</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong></dt>
+<dd>The dataframe that contains the data</dd>
+<dt><strong><code>save_fig</code></strong></dt>
+<dd>If True, the figure will be saved to the file_path. Defaults to False</dd>
+<dt><strong><code>show_mean</code></strong></dt>
+<dd>If True, will show the mean of the distribution. Defaults to False</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A matplotlib axis</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_hist(df,save_fig = False,show_mean = False,**kwargs):
+    &#34;&#34;&#34;
+    It takes a dataframe with two columns, one with the distance between stops and the other with the
+    number of traversals between those stops, and plots a weighted histogram of the distances
+    
+    Args:
+      df: The dataframe that contains the data
+      save_fig: If True, the figure will be saved to the file_path. Defaults to False
+      show_mean: If True, will show the mean of the distribution. Defaults to False
+    
+    Returns:
+      A matplotlib axis
+    &#34;&#34;&#34;
+    if &#34;max_spacing&#34; not in kwargs.keys():
+        max_spacing = 3000
+        print(&#34;Using max_spacing = 3000&#34;)
+    else:
+        max_spacing = kwargs[&#39;max_spacing&#39;]
+    if &#34;ax&#34; in kwargs.keys():
+        ax = kwargs[&#39;ax&#39;]
+    else:
+        fig, ax = plt.subplots(figsize=(8,6))
+    df = df[df[&#39;distance&#39;] &lt; max_spacing]
+    data = np.hstack([np.repeat(x, y) for x, y in zip(df[&#39;distance&#39;], df.traversals)])
+    plt.hist(data,range=(0,max_spacing),density = True,bins = int(max_spacing/50),fc=(0, 105/255, 160/255, 0.4),ec = &#34;white&#34;,lw =0.8)
+    x = np.arange(0,max_spacing,5)
+    plt.plot(x,gaussian_kde(data)(x),lw = 1.5,color=(0, 85/255, 120/255, 1))
+    # sns.histplot(data,binwidth=50,stat = &#34;density&#34;,kde=True,ax=ax)
+    plt.xlim([0,max_spacing])
+    plt.xlabel(&#39;Stop Spacing [m]&#39;)
+    plt.ylabel(&#39;Density - Traversal Weighted&#39;)
+    plt.title(&#34;Histogram of Spacing&#34;)
+    if show_mean:
+        plt.axvline(np.mean(data), color=&#39;k&#39;, linestyle=&#39;dashed&#39;, linewidth=2)
+        min_ylim, max_ylim = plt.ylim()
+        plt.text(np.mean(data)*1.1, max_ylim*0.9, &#39;Mean: {:.0f}&#39;.format(np.mean(data)),fontsize=12)
+    if &#34;title&#34; in kwargs.keys():
+        plt.title(kwargs[&#39;title&#39;])
+    if save_fig == True:
+        assert &#34;file_path&#34; in kwargs.keys(), &#34;Please pass in the `file_path`&#34;
+        plt.savefig(kwargs[&#39;file_path&#39;], dpi=300)
+    plt.show()
+    plt.close(fig)
+    return ax</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.process"><code class="name flex">
+<span>def <span class="ident">process</span></span>(<span>pipeline_gtfs, row, max_spacing)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes a pipeline, a row from the sources_df, and a max_spacing, and returns the output of the
+pipeline</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pipeline_gtfs</code></strong></dt>
+<dd>This is the function that will be used to process the GTFS data.</dd>
+<dt><strong><code>row</code></strong></dt>
+<dd>This is a row in the sources_df dataframe. It contains the name of the provider, the url to</dd>
+</dl>
+<p>the gtfs file, and the bounding box of the area that the gtfs file covers.
+max_spacing: Maximum Allowed Spacing between two consecutive stops.</p>
+<h2 id="returns">Returns</h2>
+<p>The return value is a tuple of the form (filename,folder_path,df)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process(pipeline_gtfs,row,max_spacing):
+    &#34;&#34;&#34;
+    It takes a pipeline, a row from the sources_df, and a max_spacing, and returns the output of the
+    pipeline
+    
+    Args:
+      pipeline_gtfs: This is the function that will be used to process the GTFS data.
+      row: This is a row in the sources_df dataframe. It contains the name of the provider, the url to
+    the gtfs file, and the bounding box of the area that the gtfs file covers.
+      max_spacing: Maximum Allowed Spacing between two consecutive stops.
+    
+    Returns:
+      The return value is a tuple of the form (filename,folder_path,df)
+    &#34;&#34;&#34;
+    filename = row[&#39;provider&#39;]
+    url = row[&#39;urls.latest&#39;]
+    bounds = [[row[&#39;minimum_longitude&#39;],row[&#39;minimum_latitude&#39;]],[row[&#39;maximum_longitude&#39;],row[&#39;maximum_latitude&#39;]]]
+    print(filename)
+    try:
+        return pipeline_gtfs(filename,url,bounds,max_spacing)
+    except:
+        traceback.print_exc()
+        folder_path  = os.path.join(&#39;output_files&#39;,filename)
+        return failed_pipeline(&#34;Failed for &#34;,filename,folder_path)</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.process_feed"><code class="name flex">
+<span>def <span class="ident">process_feed</span></span>(<span>feed)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes a GTFS feed, merges the trip and shape data, filters the stop_times data to only include
+the trips that are in the feed, merges the stop_times data with the stop data, creates a segment for
+each stop pair, gets the EPSG zone for the feed, creates a GeoDataFrame, and calculates the length
+of each segment</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>feed</code></strong></dt>
+<dd>a GTFS feed object</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A GeoDataFrame with the following columns:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_feed(feed):
+    &#34;&#34;&#34;
+    It takes a GTFS feed, merges the trip and shape data, filters the stop_times data to only include
+    the trips that are in the feed, merges the stop_times data with the stop data, creates a segment for
+    each stop pair, gets the EPSG zone for the feed, creates a GeoDataFrame, and calculates the length
+    of each segment
+    
+    Args:
+      feed: a GTFS feed object
+    
+    Returns:
+      A GeoDataFrame with the following columns:
+    &#34;&#34;&#34;
+    trip_df = merge_trip_geom(feed.trips,feed.shapes)
+    trip_ids = trip_df.trip_id.unique()
+    stop_df = filter_stop_df(feed.stop_times,trip_ids)
+    stop_loc_df = feed.stops[[&#39;stop_id&#39;,&#39;geometry&#39;]]
+    stop_df = merge_stop_geom(stop_df,stop_loc_df)    
+    stop_df = stop_df.merge(trip_df,on=&#39;trip_id&#39;,how=&#39;left&#39;)
+    stop_df = create_segments(stop_df)
+    # return stop_df
+    epsg_zone = get_zone_epsg(stop_df)
+    subset_list = np.array([&#39;route_id&#39;,&#39;shape_id&#39;,&#39;service_id&#39;,&#39;segment_id&#39;,&#39;stop_id1&#39;,&#39;stop_id2&#39;,&#39;direction_id&#39;,&#39;traversals&#39;,&#39;geometry&#39;])
+    col_subset = subset_list[np.in1d(subset_list,stop_df.columns)]
+    stop_df = stop_df[col_subset]
+    stop_df = make_gdf(stop_df)    
+    stop_df[&#39;distance&#39;] = stop_df.to_crs(epsg_zone).geometry.length
+    return stop_df</code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.summary_stats"><code class="name flex">
+<span>def <span class="ident">summary_stats</span></span>(<span>df, export=False, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes in a dataframe, and returns a dataframe with summary statistics</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong></dt>
+<dd>The dataframe that you want to get the summary statistics for.</dd>
+<dt><strong><code>export</code></strong></dt>
+<dd>If True, the summary will be exported to a csv file. Defaults to False</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A dataframe with the summary statistics</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def summary_stats(df,export = False,**kwargs):
+    &#34;&#34;&#34;
+    It takes in a dataframe, and returns a dataframe with summary statistics
+    
+    Args:
+      df: The dataframe that you want to get the summary statistics for.
+      export: If True, the summary will be exported to a csv file. Defaults to False
+    
+    Returns:
+      A dataframe with the summary statistics
+    &#34;&#34;&#34;
+    if &#34;max_spacing&#34; not in kwargs.keys():
+        max_spacing = 3000
+        print(&#34;Using max_spacing = 3000&#34;)
+    else:
+        max_spacing = kwargs[&#39;max_spacing&#39;]
+    percent_spacing = round(df[df[&#34;distance&#34;] &gt; max_spacing][&#39;traversals&#39;].sum()/df[&#39;traversals&#39;].sum() *100,3)
+    df = df[df[&#34;distance&#34;] &lt;= max_spacing]
+    stop_weighted_mean = df.groupby([&#39;segment_id&#39;,&#39;distance&#39;]).first().reset_index()[&#34;distance&#34;].mean()
+    route_weighted_mean = df.groupby([&#39;route_id&#39;,&#39;segment_id&#39;,&#39;distance&#39;]).first().reset_index()[&#34;distance&#34;].mean()
+    weighted_data =  np.hstack([np.repeat(x, y) for x, y in zip(df[&#39;distance&#39;], df.traversals)])
+    
+    df_dict = {
+            &#39;Segment Weighted Mean&#39; : stop_weighted_mean,
+            &#39;Route Weighted Mean&#39; : route_weighted_mean,
+            &#39;Traversal Weighted Mean&#39;: round(np.mean(weighted_data),3),
+            &#39;Traversal Weighted Std&#39;: round(np.mean(weighted_data),3),
+            &#39;Traversal Weighted 25 % Quantile&#39;: round(np.quantile(weighted_data,0.25),3),
+            &#39;Traversal Weighted 50 % Quantile&#39;: round(np.quantile(weighted_data,0.50),3),
+            &#39;Traversal Weighted 75 % Quantile&#39;: round(np.quantile(weighted_data,0.75),3),
+            &#39;No of Segments&#39;:int(len(df)),
+            &#39;No of Routes&#39;:int(len(df.route_id.unique())),
+            &#39;No of Traversals&#39;:int(sum(df.traversals)),  
+            &#39;Max Spacing&#39;:int(max_spacing),
+            &#39;% Segments w/ spacing &gt; max_spacing&#39;:percent_spacing}
+    summary_df = pd.DataFrame([df_dict])
+    # df.set_index(summary_df.columns[0],inplace=True)
+    if export:
+        assert &#34;file_path&#34; in kwargs.keys(), &#34;Please pass in the `file_path`&#34;
+        summary_df.to_csv(kwargs[&#39;file_path&#39;],index = False)
+        print(&#34;Saved the summary in &#34;+kwargs[&#39;file_path&#39;])
+    summary_df = summary_df.T
+    return summary_df </code></pre>
+</details>
+</dd>
+<dt id="gtfs_segments.summary_stats_mobility"><code class="name flex">
+<span>def <span class="ident">summary_stats_mobility</span></span>(<span>df, folder_path, filename, b_day, link, bounds, max_spacing=3000, export=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It takes in a dataframe, a folder path, a filename, a busiest day, a link, a bounding box, a max
+spacing, and a boolean for exporting the summary to a csv. </p>
+<p>It then calculates the percentage of segments that have a spacing greater than the max spacing. It
+then filters the dataframe to only include segments with a spacing less than the max spacing. It
+then calculates the segment weighted mean, route weighted mean, traversal weighted mean, traversal
+weighted standard deviation, traversal weighted 25th percentile, traversal weighted 50th percentile,
+traversal weighted 75th percentile, number of segments, number of routes, number of traversals, and
+the max spacing. It then creates a dictionary with all of the above values and creates a dataframe
+from the dictionary. It then exports the dataframe to a csv if the export boolean is true. If the
+export boolean is false, it transposes the dataframe and returns it.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong></dt>
+<dd>the dataframe containing the mobility data</dd>
+<dt><strong><code>folder_path</code></strong></dt>
+<dd>The path to the folder where you want to save the summary.csv file.</dd>
+<dt><strong><code>filename</code></strong></dt>
+<dd>The name of the file you want to save the data as.</dd>
+<dt><strong><code>b_day</code></strong></dt>
+<dd>The busiest day of the week</dd>
+<dt><strong><code>link</code></strong></dt>
+<dd>The link of the map you want to use.</dd>
+<dt><strong><code>bounds</code></strong></dt>
+<dd>The bounding box of the area you want to analyze.</dd>
+<dt><strong><code>max_spacing</code></strong></dt>
+<dd>The maximum distance between two stops that you want to consider. Defaults to 3000</dd>
+<dt><strong><code>export</code></strong></dt>
+<dd>If True, the summary will be saved as a csv file in the folder_path. If False, the summary</dd>
+</dl>
+<p>will be returned as a dataframe. Defaults to False</p>
+<h2 id="returns">Returns</h2>
+<p>A dataframe with the summary statistics of the mobility data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def summary_stats_mobility(df,folder_path,filename,b_day,link,bounds,max_spacing = 3000,export = False):
+    &#34;&#34;&#34;
+    It takes in a dataframe, a folder path, a filename, a busiest day, a link, a bounding box, a max
+    spacing, and a boolean for exporting the summary to a csv. 
+    
+    It then calculates the percentage of segments that have a spacing greater than the max spacing. It
+    then filters the dataframe to only include segments with a spacing less than the max spacing. It
+    then calculates the segment weighted mean, route weighted mean, traversal weighted mean, traversal
+    weighted standard deviation, traversal weighted 25th percentile, traversal weighted 50th percentile,
+    traversal weighted 75th percentile, number of segments, number of routes, number of traversals, and
+    the max spacing. It then creates a dictionary with all of the above values and creates a dataframe
+    from the dictionary. It then exports the dataframe to a csv if the export boolean is true. If the
+    export boolean is false, it transposes the dataframe and returns it.
+    
+    Args:
+      df: the dataframe containing the mobility data
+      folder_path: The path to the folder where you want to save the summary.csv file.
+      filename: The name of the file you want to save the data as.
+      b_day: The busiest day of the week
+      link: The link of the map you want to use.
+      bounds: The bounding box of the area you want to analyze.
+      max_spacing: The maximum distance between two stops that you want to consider. Defaults to 3000
+      export: If True, the summary will be saved as a csv file in the folder_path. If False, the summary
+    will be returned as a dataframe. Defaults to False
+    
+    Returns:
+      A dataframe with the summary statistics of the mobility data.
+    &#34;&#34;&#34;
+    percent_spacing = round(df[df[&#34;distance&#34;] &gt; max_spacing][&#39;traversals&#39;].sum()/df[&#39;traversals&#39;].sum() *100,3)
+    df = df[df[&#34;distance&#34;] &lt;= max_spacing]
+    csv_path = os.path.join(folder_path,&#39;summary.csv&#39;)
+    stop_weighted_mean = df.groupby([&#39;segment_id&#39;,&#39;distance&#39;]).first().reset_index()[&#34;distance&#34;].mean()
+    route_weighted_mean = df.groupby([&#39;route_id&#39;,&#39;segment_id&#39;,&#39;distance&#39;]).first().reset_index()[&#34;distance&#34;].mean()
+    weighted_data =  np.hstack([np.repeat(x, y) for x, y in zip(df[&#39;distance&#39;], df.traversals)])
+    df_dict = {&#34;Name&#34;:filename,
+            &#39;Busiest Day&#39;: b_day,
+            &#39;Link&#39;: link,
+            &#39;Min Latitude&#39;: bounds[0][1],
+            &#39;Min Longitude&#39;: bounds[0][0],
+            &#39;Max Latitude&#39;: bounds[1][1],
+            &#39;Max Longitude&#39;: bounds[1][0],
+            &#39;Segment Weighted Mean&#39; : stop_weighted_mean,
+            &#39;Route Weighted Mean&#39; : route_weighted_mean,
+            &#39;Traversal Weighted Mean&#39;: round(np.mean(weighted_data),3),
+            &#39;Traversal Weighted Std&#39;: round(np.std(weighted_data),3),
+            &#39;Traversal Weighted 25 % Quantile&#39;: round(np.quantile(weighted_data,0.25),3),
+            &#39;Traversal Weighted 50 % Quantile&#39;: round(np.quantile(weighted_data,0.5),3),
+            &#39;Traversal Weighted 75 % Quantile&#39;: round(np.quantile(weighted_data,0.75),3),
+            &#39;No of Segments&#39;:len(df),
+            &#39;No of Routes&#39;:len(df.route_id.unique()),
+            &#39;No of Traversals&#39;:sum(df.traversals),  
+            &#39;Max Spacing&#39;:max_spacing,
+            &#39;% Segments w/ spacing &gt; max_spacing&#39;:percent_spacing}
+    summary_df = pd.DataFrame([df_dict])
+    # df.set_index(summary_df.columns[0],inplace=True)
+    if export:
+        summary_df.to_csv(csv_path,index = False)
+        return &#34;Saved the summary.csv in &#34;+folder_path
+    else:
+       summary_df = summary_df.T
+       return summary_df</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="gtfs_segments.geom_utils" href="geom_utils.html">gtfs_segments.geom_utils</a></code></li>
+<li><code><a title="gtfs_segments.gtfs_segments" href="gtfs_segments.html">gtfs_segments.gtfs_segments</a></code></li>
+<li><code><a title="gtfs_segments.mobility" href="mobility.html">gtfs_segments.mobility</a></code></li>
+<li><code><a title="gtfs_segments.partridge_func" href="partridge_func.html">gtfs_segments.partridge_func</a></code></li>
+<li><code><a title="gtfs_segments.utils" href="utils.html">gtfs_segments.utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="gtfs_segments.download_latest_data" href="#gtfs_segments.download_latest_data">download_latest_data</a></code></li>
+<li><code><a title="gtfs_segments.export_segments" href="#gtfs_segments.export_segments">export_segments</a></code></li>
+<li><code><a title="gtfs_segments.fetch_gtfs_source" href="#gtfs_segments.fetch_gtfs_source">fetch_gtfs_source</a></code></li>
+<li><code><a title="gtfs_segments.get_gtfs_segments" href="#gtfs_segments.get_gtfs_segments">get_gtfs_segments</a></code></li>
+<li><code><a title="gtfs_segments.pipeline_gtfs" href="#gtfs_segments.pipeline_gtfs">pipeline_gtfs</a></code></li>
+<li><code><a title="gtfs_segments.plot_hist" href="#gtfs_segments.plot_hist">plot_hist</a></code></li>
+<li><code><a title="gtfs_segments.process" href="#gtfs_segments.process">process</a></code></li>
+<li><code><a title="gtfs_segments.process_feed" href="#gtfs_segments.process_feed">process_feed</a></code></li>
+<li><code><a title="gtfs_segments.summary_stats" href="#gtfs_segments.summary_stats">summary_stats</a></code></li>
+<li><code><a title="gtfs_segments.summary_stats_mobility" href="#gtfs_segments.summary_stats_mobility">summary_stats_mobility</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
